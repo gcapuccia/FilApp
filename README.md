@@ -1,7 +1,7 @@
 # FilApp
 
 <p align="center">
-  <img src="https://static.educacionit.com/istea/assets/identidad/logo-og.png" alt="FilApp Logo" width="200">
+  <img src="https://raw.githubusercontent.com/gcapuccia/FilApp/main/Logo.png" alt="FilApp Logo" width="200">
 </p>
 
 ## Descripción
@@ -54,4 +54,4 @@
 
 ## Uso
 
-Para acceder a la aplicación, abre tu navegador web y ve a por ejemplo `http://localhost/FilApp/php/empleados.php`.
+Para acceder a la aplicación, abre tu navegador web y ve a por ejemplo `http://localhost/FilApp/php/api/empleados.php` o `http://localhost/FilApp/php/api/cargos.php` o `http://localhost/FilApp/php/api/resenas.php` o `http://localhost/FilApp/php/api/motivos.php`.
