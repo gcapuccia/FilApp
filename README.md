@@ -8,7 +8,7 @@
 
 **FilApp** es una aplicación diseñada para organizar filas en los locales.
 
-## Instalación
+## Instalación DE LA API
 
 ### Paso 1: Descargar e Instalar XAMPP
 1. **Descargar XAMPP**:
@@ -54,4 +54,49 @@
 
 ## Uso
 
-Para acceder a la aplicación, abre tu navegador web y ve a por ejemplo `http://localhost/FilApp/php/api/empleados.php` o `http://localhost/FilApp/php/api/cargos.php` o `http://localhost/FilApp/php/api/resenas.php` o `http://localhost/FilApp/php/api/motivos.php`.
+Para acceder a la aplicación, abre tu navegador web y ve a por ejemplo `http://localhost/FilApp/php/api/empleados.php`.
+
+## MODELOS
+`//api/empleados.php`:
+
+export interface Empleados {
+  id: number
+  Nombre: string
+  Apellido: string
+  Usuario: string
+  pass: string
+  idCargo: number
+  idVendedor: number
+  Mail: string
+  Domicilio: string
+  Localidad: string
+  UltimoLogin: string
+  UserCreador: any
+}
+
+`//api/cargos.php`:
+
+export interface Cargos {
+  idCargo: number
+  Tipo: string
+}
+
+`//api/resenas.php`:
+
+export interface Resenas {
+  idCargo: number
+  nombre: string
+  clasificacion: number
+  obs: string
+}
+
+
+`//api/motivos.php`: 
+
+export interface Motivos {
+  id: number
+  titulo: string
+  descripccion: string
+}
+
+
