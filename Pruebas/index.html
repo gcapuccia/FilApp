@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Prueba</title>
+</head>
+<body>
+    <h1>Formulario de Prueba para API</h1>
+    <form id="apiForm">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required><br><br>
+
+        <label for="apellido">Apellido:</label>
+        <input type="text" id="apellido" name="apellido" required><br><br>
+
+        <label for="mail">Correo Electrónico:</label>
+        <input type="email" id="mail" name="mail" required><br><br>
+
+        <label for="motivo">Motivo:</label>
+        <input type="number" id="motivo" name="motivo" required><br><br>
+
+        <button type="submit">Enviar</button>
+    </form>
+
+    <script>
+        document.getElementById('apiForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const formData = {
+                nombre: document.getElementById('nombre').value,
+                apellido: document.getElementById('apellido').value,
+                mail: document.getElementById('mail').value,
+                motivo: document.getElementById('motivo').value
+            };
+
+            console.log('Datos enviados:', formData); // Mostrar los datos en la consola
+
+            fetch('http://localhost/FilApp/php/api/Clientes/Pclientes.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(formData)
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log("Datos enviados al servidor" + formData);
+                alert('Respuesta del servidor: ' + JSON.stringify(data));
+                
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        });
+    </script>
+</body>
+</html>
