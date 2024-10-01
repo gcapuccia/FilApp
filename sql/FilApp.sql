@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 10-09-2024 a las 08:14:38
+-- Tiempo de generación: 01-10-2024 a las 15:00:56
 -- Versión del servidor: 10.4.27-MariaDB
 -- Versión de PHP: 8.1.12
 
@@ -39,7 +39,7 @@ CREATE TABLE `cargos` (
 INSERT INTO `cargos` (`idCargo`, `Tipo`) VALUES
 (1, 'Jefe'),
 (2, 'Supervisor'),
-(3, 'Vendedor'),
+(3, 'Empleado'),
 (4, 'Logistica');
 
 -- --------------------------------------------------------
@@ -54,11 +54,31 @@ CREATE TABLE `clientes` (
   `apellido` varchar(50) NOT NULL,
   `mail` varchar(50) NOT NULL,
   `ingreso` datetime NOT NULL,
-  `inicioAtencion` datetime NOT NULL,
-  `finAtencion` datetime NOT NULL,
+  `inicioAtencion` datetime DEFAULT NULL,
+  `finAtencion` datetime DEFAULT NULL,
+  `usuarioDeAtencion` varchar(50) DEFAULT NULL,
   `enEspera` int(11) NOT NULL,
-  `motivo` int(11) NOT NULL
+  `motivo` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+--
+-- Volcado de datos para la tabla `clientes`
+--
+
+INSERT INTO `clientes` (`id`, `nombre`, `apellido`, `mail`, `ingreso`, `inicioAtencion`, `finAtencion`, `usuarioDeAtencion`, `enEspera`, `motivo`) VALUES
+(1, 'Juan', 'Pérez', 'juan.perez@example.com', '2024-09-10 12:00:00', NULL, NULL, NULL, 1, 2),
+(6, 'juanito', 'Gil', 'juan.perez@example.com', '2024-09-10 12:00:00', '2024-09-30 20:42:41', NULL, 'gcapucci', 3, 1),
+(13, 'gaston', 'rodriguez', 'juan.perez@example.com', '2024-09-10 12:00:00', NULL, NULL, NULL, 0, 3),
+(17, 'alberto', 'gomez', 'juan.perez@example.com', '2024-09-10 12:00:00', '2024-09-30 20:43:07', NULL, 'gcapucci', 3, 3),
+(18, 'Juan', 'Pérez', 'juan.perez@example.com', '2024-09-10 12:00:00', NULL, NULL, NULL, 4, 2),
+(19, 'Alberto', 'Gomez', 'alberto.gomez123@gmail.com', '2024-09-20 12:00:00', '2024-09-30 20:43:21', NULL, 'gcapucci', 3, 1),
+(28, 'Lucas', 'Mansilla', 'Lucas.Mansilla@example.com', '2024-09-30 20:52:17', '2024-09-30 20:52:47', '2024-09-30 21:01:13', 'gcapucci', 3, 3),
+(29, 'Lucas', 'Mansilla', 'Lucas.Mansilla@example.com', '2024-09-30 21:12:48', NULL, NULL, NULL, 0, 3),
+(30, 'Lucas', 'Mansilla', 'Lucas.Mansilla@example.com', '2024-09-30 21:34:47', NULL, NULL, NULL, 0, 3),
+(31, 'Lucas', 'Mansilla', 'Lucas.Mansilla@example.com', '2024-09-30 21:39:27', NULL, NULL, NULL, 0, 3),
+(32, 'Lucas', 'Mansilla', 'Lucas.Mansilla@example.com', '2024-09-30 21:40:41', NULL, NULL, NULL, 0, 3),
+(33, 'Lucas', 'Mansilla', 'Lucas.Mansilla@example.com', '2024-09-30 21:40:44', NULL, NULL, NULL, 0, 3),
+(34, 'guido', 'Capucciati', 'guidoca_94@hotmail.com', '2024-09-30 22:01:49', NULL, NULL, NULL, 0, 5);
 
 -- --------------------------------------------------------
 
@@ -75,21 +95,21 @@ CREATE TABLE `empleados` (
   `idCargo` int(11) NOT NULL,
   `idVendedor` int(11) NOT NULL,
   `Mail` varchar(100) NOT NULL,
-  `Domicilio` varchar(100) NOT NULL,
-  `Localidad` varchar(100) NOT NULL,
-  `antiguedad` int(11) NOT NULL,
-  `fechaInicio` date NOT NULL
+  `Domicilio` varchar(100) DEFAULT NULL,
+  `Localidad` varchar(100) DEFAULT NULL,
+  `UltimoLogin` date DEFAULT NULL,
+  `UserCreador` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
 -- Volcado de datos para la tabla `empleados`
 --
 
-INSERT INTO `empleados` (`id`, `Nombre`, `Apellido`, `Usuario`, `pass`, `idCargo`, `idVendedor`, `Mail`, `Domicilio`, `Localidad`, `antiguedad`, `fechaInicio`) VALUES
-(1, 'Guido', 'Capucciati', 'gcapucci', 'jeje1234', 3, 500876, 'guido.capucciati@filapp.com', '9 de julio', 'Gutierrez', 1, '2024-03-12'),
-(2, 'Lucas', 'Mansilla', 'lmansi', 'Admin123', 4, 400520, 'lucas.mansilla@filapp.com', '25 de mayo', 'Longchams', 1, '2023-12-13'),
-(3, 'Gaston', 'Mansilla', 'gmansi', 'Admin', 2, 500423, 'gaston.mansilla@filapp.com', 'Cochabamba 1234', 'Lanus', 3, '2022-09-14'),
-(4, 'Rodrigo', 'Vera', 'rvera', 'A1', 1, 100412, 'rodrigo.vera@filapp.com', 'calle falsa 1234', 'Sprinfild', 3, '2020-08-18');
+INSERT INTO `empleados` (`id`, `Nombre`, `Apellido`, `Usuario`, `pass`, `idCargo`, `idVendedor`, `Mail`, `Domicilio`, `Localidad`, `UltimoLogin`, `UserCreador`) VALUES
+(1, 'Guido', 'Capucciati', 'gcapucci', '', 3, 500876, 'guido.capucciati@filapp.com', '9 de julio', 'Gutierrez', '0000-00-00', NULL),
+(2, 'Lucas', 'Mansilla', 'lmansi', '', 4, 400520, 'lucas.mansilla@filapp.com', '25 de mayo', 'Longchams', '0000-00-00', NULL),
+(3, 'Gaston', 'Mansilla', 'gmansi', '', 2, 500423, 'gaston.mansilla@filapp.com', 'Cochabamba 1234', 'Lanus', '0000-00-00', NULL),
+(4, 'Rodrigo', 'Vera', 'rvera', '', 1, 100412, 'rodrigo.vera@filapp.com', 'calle falsa 1234', 'Sprinfild', '0000-00-00', NULL);
 
 -- --------------------------------------------------------
 
@@ -109,7 +129,9 @@ CREATE TABLE `motivos` (
 
 INSERT INTO `motivos` (`id`, `titulo`, `descripccion`) VALUES
 (1, 'Compras', ''),
-(2, 'Asesoramiento', '');
+(2, 'Asesoramiento', ''),
+(3, 'Post Venta', ''),
+(4, 'Retiro de Producto', '');
 
 -- --------------------------------------------------------
 
@@ -122,6 +144,17 @@ CREATE TABLE `resenas` (
   `nombre` varchar(50) NOT NULL,
   `calificacion` int(11) NOT NULL,
   `obs` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `tipoespera`
+--
+
+CREATE TABLE `tipoespera` (
+  `id` int(11) NOT NULL,
+  `Tipo` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
@@ -138,8 +171,7 @@ ALTER TABLE `cargos`
 -- Indices de la tabla `clientes`
 --
 ALTER TABLE `clientes`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `motivo` (`motivo`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indices de la tabla `empleados`
@@ -149,16 +181,15 @@ ALTER TABLE `empleados`
   ADD UNIQUE KEY `idCargo` (`idCargo`);
 
 --
--- Indices de la tabla `motivos`
---
-ALTER TABLE `motivos`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `id` (`id`);
-
---
 -- Indices de la tabla `resenas`
 --
 ALTER TABLE `resenas`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `tipoespera`
+--
+ALTER TABLE `tipoespera`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -175,7 +206,7 @@ ALTER TABLE `cargos`
 -- AUTO_INCREMENT de la tabla `clientes`
 --
 ALTER TABLE `clientes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- AUTO_INCREMENT de la tabla `empleados`
@@ -184,26 +215,20 @@ ALTER TABLE `empleados`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
--- AUTO_INCREMENT de la tabla `motivos`
---
-ALTER TABLE `motivos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
---
 -- AUTO_INCREMENT de la tabla `resenas`
 --
 ALTER TABLE `resenas`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- Restricciones para tablas volcadas
+-- AUTO_INCREMENT de la tabla `tipoespera`
 --
+ALTER TABLE `tipoespera`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- Filtros para la tabla `clientes`
+-- Restricciones para tablas volcadas
 --
-ALTER TABLE `clientes`
-  ADD CONSTRAINT `clientes_ibfk_1` FOREIGN KEY (`motivo`) REFERENCES `motivos` (`id`);
 
 --
 -- Filtros para la tabla `empleados`
