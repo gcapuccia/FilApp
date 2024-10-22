@@ -1,0 +1,138 @@
+ /* Estilos personalizados utilizando los colores del logo */
+ body {
+    font-family: 'Roboto', sans-serif;
+}
+
+ .btn-custom {
+    background-color: rgb(245, 81, 31) !important; /* Asegurar el color de fondo */
+    color: white !important; /* Asegurar el color del texto */
+    border: 1px solid transparent; /* Mantiene el borde, pero transparente */
+}
+
+
+.btn-custom:hover {
+    background-color: #df3704 !important; /* Cambiar color al hacer hover */
+    border-color: #a02f0d !important; /* Cambiar color del borde al hacer hover */
+}
+
+    /* Estilos para el footer */
+    footer {
+      background-color: #263238;
+      color: white;
+    }
+
+    .footer-left h4, .footer-right h4 {
+      margin-bottom: 0;
+    }
+
+    
+  /* Imagen de fondo detrás del formulario */
+  /* Estilo para el contenedor del formulario */
+  #form-background {
+  background-image: url('/assets/img/fontLogin.jpg');
+  background-size: 100% 100%; /* Estira la imagen para cubrir todo el fondo */
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+
+  /* Asegurarse de que el contenido del formulario sea legible */
+  /* Div que contiene la imagen de fondo */
+#full-background {
+  position: relative;
+  background-image: url('/assets/img/fontLogin.jpg'); /* Ruta de la imagen de fondo */
+  background-size: cover; /* Que la imagen cubra todo el fondo */
+  background-position: center; /* Centrar la imagen */
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
+  height: 100vh; /* Ocupa el 100% de la altura de la pantalla */
+  width: 100%; /* Ocupa el 100% del ancho de la pantalla */
+}
+
+/* Contenedor del formulario */
+.container {
+  height: 100%; /* Asegura que el contenedor interno ocupe todo el alto disponible */
+}
+
+/* Aseguramos que el formulario no cambie de tamaño */
+.card {
+  max-width: 400px; /* Ancho máximo del formulario */
+  width: 100%; /* Mantiene el formulario responsivo */
+  background-color: rgba(255, 255, 255, 0.9); /* Fondo semitransparente */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Añadir sombra */
+}
+
+ p{
+    margin-top: 20px;
+}
+/* Footer */
+.footer {
+  background-color: #f8f9fa; /* Ajusta el color del footer */
+  text-align: center; /* Centra el texto */
+  padding: 20px;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+/* Estilos para los botones de redes sociales */
+.social-btn {
+    margin: 0 10px;
+    font-size: 24px;
+    color: white;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.social-btn {
+    background-color: transparent; /* O cualquier color que desees */
+    border: none; /* Elimina cualquier borde no deseado */
+    color: #fff; /* Ajusta el color del icono */
+    font-size: 24px; /* Ajusta el tamaño del ícono */
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%; /* Botón redondeado */
+    transition: background-color 0.3s ease;
+}
+
+.social-btn:hover {
+    background-color: #ccc; /* Color al hacer hover (ajústalo según desees) */
+}
+
+.twitter-btn {
+    background-color: #1DA1F2;
+}
+
+.twitter-btn:hover {
+    background-color: #0d8bec;
+}
+
+.facebook-btn {
+    background-color: #4267B2;
+}
+
+.facebook-btn:hover {
+    background-color: #365899;
+}
+
+.email-btn {
+    background-color: #ea4335;
+}
+
+.email-btn:hover {
+    background-color: #c73c26;
+}

@@ -1,0 +1,109 @@
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+footer {
+    background-color: #263238;
+    color: white;
+  }
+.registro-exitoso {
+    background-color: #28a745; /* Verde Bootstrap */
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+.registro-exitoso .icono-tilde {
+    font-size: 80px;
+    margin-bottom: 20px;
+}
+.registro-exitoso h1 {
+    font-size: 50px;
+}
+.registro-exitoso p {
+    font-size: 30px;
+}
+
+
+.spacer {
+    height: 220px; /* Aumentar a 100px para pantallas pequeñas */
+    width: 100%;  /* Ocupa todo el ancho disponible */
+}
+
+@media (min-width: 768px) {
+    .spacer {
+        height: 270px; 
+    }
+}
+
+@media (min-width: 1200px) {
+    .spacer {
+        height: 300px; 
+    }
+}
+
+/* Footer */
+.footer {
+    background-color: #f8f9fa; /* Ajusta el color del footer */
+    text-align: center; /* Centra el texto */
+    padding: 20px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+  }
+  
+  /* Estilos para los botones de redes sociales */
+  .social-btn {
+      margin: 0 10px;
+      font-size: 24px;
+      color: white;
+      width: 50px;
+      height: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .social-btn {
+      background-color: transparent; /* O cualquier color que desees */
+      border: none; /* Elimina cualquier borde no deseado */
+      color: #fff; /* Ajusta el color del icono */
+      font-size: 24px; /* Ajusta el tamaño del ícono */
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%; /* Botón redondeado */
+      transition: background-color 0.3s ease;
+  }
+  
+  .social-btn:hover {
+      background-color: #ccc; /* Color al hacer hover (ajústalo según desees) */
+  }
+  
+  .twitter-btn {
+      background-color: #1DA1F2;
+  }
+  
+  .twitter-btn:hover {
+      background-color: #0d8bec;
+  }
+  
+  .facebook-btn {
+      background-color: #4267B2;
+  }
+  
+  .facebook-btn:hover {
+      background-color: #365899;
+  }
+  
+  .email-btn {
+      background-color: #ea4335;
+  }
+  
+  .email-btn:hover {
+      background-color: #c73c26;
+  }
