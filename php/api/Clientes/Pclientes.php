@@ -32,7 +32,7 @@ if (!$mail) {
 
 $enEspera = 0;
 
-$motivo = isset($input['motivo']) ? filter_var($input['motivo'], FILTER_VALIDATE_INT) : null;
+$motivo = isset($input['motivo']) ? filter_var($input['motivo']/* , FILTER_VALIDATE_INT */) : null;
 if ($motivo === false) {
     $errores[] = "El campo 'motivo' es obligatorio y debe ser un número entero.";
 }
