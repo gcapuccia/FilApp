@@ -1,0 +1,12 @@
+.sidenav-container {
+    display: flex;
+    height: 100vh; /* Ocupa el 100% de la altura de la viewport */
+  }
+  
+  .sidenav {
+    flex: 0 0 200px; /* Ancho fijo de 200px */
+  }
+  
+  .mat-sidenav-content {
+    flex: 1; /* Ocupa el espacio restante */
+  }

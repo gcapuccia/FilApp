@@ -3,20 +3,39 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LoginComponent } from './Cliente/login/login.component';
 import { AbaotComponent } from './Cliente/abaot/abaot.component';
 import { HomeComponent } from './Aplicacion/home/home.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule, MatIconButton } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
+import { FormularioComponent } from './Aplicacion/formulario/formulario.component';
+import { SidebarComponent } from './Aplicacion/sidebar/sidebar.component';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatIconModule } from '@angular/material/icon'
+import { MatToolbarModule } from '@angular/material/toolbar';
+import {MatListModule } from '@angular/material/list';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent,
     AbaotComponent,
-    HomeComponent
+    HomeComponent,
+    FormularioComponent,
+    SidebarComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatInputModule,
+    MatButtonModule,
+    MatCardModule,
+    MatSidenavModule,
+    MatIconModule,
+    MatToolbarModule,
+    MatListModule
   ],
   providers: [],
   bootstrap: [AppComponent]
