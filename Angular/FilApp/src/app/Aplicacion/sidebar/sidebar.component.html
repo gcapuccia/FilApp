@@ -1,15 +1,12 @@
 
 <div>
-<!-- <mat-sidenav-container class="sidenav-container" [fixedInViewport]="fixedInViewport" [(opened)]="isExpanded"> -->
 <mat-sidenav-container class="sidenav-container" >
     <mat-sidenav #sidenav mode="side" opened>
       <mat-toolbar color="primary">
         <span>Mi Aplicación</span>
-        
-
       </mat-toolbar>
       <mat-nav-list >
-        <a mat-list-item >  <mat-icon style="margin-bottom: -5px">home</mat-icon> Inicio</a>
+        <a mat-list-item >  <mat-icon >home</mat-icon> Inicio</a>
         <a mat-list-item> <mat-icon style="margin-bottom: -5px">face</mat-icon> Empleados</a>
         <a mat-list-item> <mat-icon style="margin-bottom: -5px">bar_chart</mat-icon> Metricas</a>
         <a mat-list-item> <mat-icon style="margin-bottom: -5px">people</mat-icon> Lista de turnos</a>
@@ -17,9 +14,10 @@
       
     </mat-sidenav>
     <mat-sidenav-content>
-      <app-home></app-home>
+      <app-navbar></app-navbar>
       <app-formulario></app-formulario>
     </mat-sidenav-content>
   </mat-sidenav-container> 
 </div>
-  
+   
+

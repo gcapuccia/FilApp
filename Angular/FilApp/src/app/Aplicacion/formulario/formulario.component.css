@@ -1,4 +1,4 @@
-.container {
+/* .container {
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -19,7 +19,88 @@
   }
   form {
     display: flex;
-    flex-direction: column; /* Apila los elementos verticalmente */
+    flex-direction: column; /* Apila los elementos verticalmente 
     align-items: center; /* Centra los elementos horizontalmente   
- */
+ 
+} */
+
+.login-wrap{
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: var(--color-text);
+	/* background-image: url(../assets/img/fontLogin.jpg); */
+}
+.container-login{
+	width: 100%;
+	max-width: 300px;
+	box-sizing: border-box;
+	height: auto;
+	margin: 0;
+	padding: 20px;
+	background-color: rgba(255,255,255,.7);
+	border-radius: 5px;
+	border: solid 1px black;
+}
+
+:root{
+	--color-text: #3F51B5;
+	--primary-color: #2B2B2C;
+	--acent-color: #3bdb6b;
+}
+html, body{
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	font-size: 16px;
+	font-family: "RobotoRegular";
+	position: relative;
+	background-color: #fff;
+}
+.text-condensedLight{ font-family: "RobotoCondensedLight"; }
+.text-center{ text-align: center; }
+.tittles{ font-family: "OswaldLight"; }
+.mdl-textfield{ width: 100%; }
+.full-width{
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	box-sizing: border-box;
+}
+.list-unstyle{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	box-sizing: border-box;
+}
+.img-responsive{
+	width: 100%;
+	height: auto;
+}
+.table-responsive{
+	overflow: auto;
+}
+.divider-menu-h{
+	height: 0;
+	border-top: 1px solid rgba(255, 255, 255, .09);
+	width: 85%;
+	margin: 0 auto;
+}
+.cover{
+	background-size: cover;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+.mdl-list__item-avatar{
+	line-height: 40px;
+	text-align: center;
+	font-size: 30px;
+}
+.table-responsive{
+	width: 100%;
+	overflow-x: scroll;
+	position: relative;
 }

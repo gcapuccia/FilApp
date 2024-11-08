@@ -16,6 +16,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon'
 import { MatToolbarModule } from '@angular/material/toolbar';
 import {MatListModule } from '@angular/material/list';
+import { NavbarComponent } from './Aplicacion/navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import {MatListModule } from '@angular/material/list';
     HomeComponent,
     FormularioComponent,
     SidebarComponent,
+    NavbarComponent,
   ],
   imports: [
     BrowserModule,
