@@ -11,4 +11,7 @@
     flex: 1; /* Ocupa el espacio restante */
   }
 
+ .mat-icon{
+  margin-bottom: -5px
+ }
   

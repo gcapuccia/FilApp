@@ -1,5 +1,5 @@
-<!-- 
-  <div class="container">
+
+  <!-- <div class="container">
 	<mat-card>
 		<mat-card-title>Iniciar Sesión</mat-card-title>
 		<form >
@@ -15,8 +15,33 @@
 		</form>
 	</mat-card>
   </div> -->
+  <div class="container">
+	<mat-card class="centered-card">
+	  <mat-card-title style="color: #3F51B5"> Bienvenido </mat-card-title>
+	  <br>
+	  <div *ngIf="validMessage != ''">
+		<h3>{{validMessage}}</h3>
+	  </div>
+	  <form class="form-container" (ngSubmit)="enviarFormulario()"> <mat-form-field>
+		  <input matInput placeholder="Usuario" class="form-control" formControlName="usuario">
+		</mat-form-field>
+		<div *ngIf="controles['usuario'].hasError('email')">
+			<h3 style="color: red;">Ingrese un email valido</h3>
+		  </div>
+		<mat-form-field>
+		  <input matInput type="password" placeholder="Contraseña" class="form-control" formControlName="password">
+		</mat-form-field>
+		<div *ngIf="controles['password'].errors?.['minLength']">
+			<h3 style="color: red;">Ingrese un password valido</h3>
+		  </div>
+		<button type="submit" mat-raised-button style="color: #3F51B5">Iniciar Sesión</button>
+		<br>
+		<button mat-raised-button color="warn" >Olvide mi contraseña</button>
+	  </form>
+	</mat-card>
+  </div>
 
-  <div class="login-wrap cover">
+  <!-- <div class="login-wrap cover">
 	<div class="container-login">
 		<p class="text-center" style="font-size: 80px;">
 			<i class="zmdi zmdi-account-circle"></i>
@@ -40,4 +65,4 @@
 			Olvide mi contraseña
 		</button>
 	</div>
-</div>
+</div> -->

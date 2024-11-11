@@ -17,6 +17,7 @@ import { MatIconModule } from '@angular/material/icon'
 import { MatToolbarModule } from '@angular/material/toolbar';
 import {MatListModule } from '@angular/material/list';
 import { NavbarComponent } from './Aplicacion/navbar/navbar.component';
+import { FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,9 @@ import { NavbarComponent } from './Aplicacion/navbar/navbar.component';
     MatSidenavModule,
     MatIconModule,
     MatToolbarModule,
-    MatListModule
+    MatListModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
