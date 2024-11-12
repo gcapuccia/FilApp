@@ -1,4 +1,4 @@
-export interface Resenas {
+export interface Resena {
     idCargo: number
     nombre: string
     clasificacion: number

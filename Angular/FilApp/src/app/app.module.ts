@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './Cliente/login/login.component';
 import { AbaotComponent } from './Cliente/about/abaot.component';
 import { HomeComponent } from './Aplicacion/home/home.component';
+import { FormularioComponent } from './Aplicacion/formulario/formulario.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     AbaotComponent,
-    HomeComponent
+    HomeComponent,
+    FormularioComponent
   ],
   imports: [
     BrowserModule,
