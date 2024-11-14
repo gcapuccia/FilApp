@@ -1,0 +1,26 @@
+.sidebar {
+    height: 100vh;
+    padding-top: 20px;
+  }
+  
+  .sidebar a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  .sidebar a:hover {
+    background-color: #333;
+  }
+
+  .offcanvas {
+    width: auto; /* Adjust width based on content */
+    max-width: 300px; /* Set a maximum width if needed */
+  }
+
+  .offcanvas-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers content horizontally */
+    justify-content: center; /* Centers content vertically */
+  }
+

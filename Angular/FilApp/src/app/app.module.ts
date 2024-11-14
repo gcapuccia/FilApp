@@ -7,6 +7,10 @@ import { LoginComponent } from './Cliente/login/login.component';
 import { AbaotComponent } from './Cliente/about/abaot.component';
 import { HomeComponent } from './Aplicacion/home/home.component';
 import { FormularioComponent } from './Aplicacion/formulario/formulario.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { SideMenuComponent } from './Aplicacion/side-menu/side-menu.component';
+import { NavBarComponent } from './Aplicacion/nav-bar/nav-bar.component';
 
 @NgModule({
   declarations: [
@@ -14,11 +18,17 @@ import { FormularioComponent } from './Aplicacion/formulario/formulario.componen
     LoginComponent,
     AbaotComponent,
     HomeComponent,
-    FormularioComponent
+    FormularioComponent,
+    SideMenuComponent,
+    NavBarComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
