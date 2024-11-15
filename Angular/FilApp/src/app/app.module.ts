@@ -12,6 +12,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { SideMenuComponent } from './Aplicacion/side-menu/side-menu.component';
 import { NavBarComponent } from './Aplicacion/nav-bar/nav-bar.component';
 import { AgregarEmpleadoComponent } from './Aplicacion/agregar-empleado/agregar-empleado.component';
+import { ListaEmpleadosComponent } from './Aplicacion/lista-empleados/lista-empleados.component';
+import { ListaTurnosComponent } from './Aplicacion/lista-turnos/lista-turnos.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +25,8 @@ import { AgregarEmpleadoComponent } from './Aplicacion/agregar-empleado/agregar-
     SideMenuComponent,
     NavBarComponent,
     AgregarEmpleadoComponent,
+    ListaEmpleadosComponent,
+    ListaTurnosComponent,
   ],
   imports: [
     BrowserModule,
