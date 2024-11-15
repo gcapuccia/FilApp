@@ -1,6 +1,7 @@
 .sidebar {
     height: 100vh;
     padding-top: 20px;
+    width: auto;
   }
   
   .sidebar a {
@@ -14,7 +15,7 @@
 
   .offcanvas {
     width: auto; /* Adjust width based on content */
-    max-width: 300px; /* Set a maximum width if needed */
+    max-width: auto; /* Set a maximum width if needed */
   }
 
   .offcanvas-body {
@@ -24,3 +25,17 @@
     justify-content: center; /* Centers content vertically */
   }
 
+ 
+
+  .container-fluid {
+    display: flex;
+    flex-direction: column;
+}
+
+.col-md-3.col-lg-2 {
+    flex: 0 0 auto;
+}
+
+.col-md-9.col-lg-10 {
+    flex: 1;
+}

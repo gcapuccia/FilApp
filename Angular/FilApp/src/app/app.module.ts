@@ -11,6 +11,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { SideMenuComponent } from './Aplicacion/side-menu/side-menu.component';
 import { NavBarComponent } from './Aplicacion/nav-bar/nav-bar.component';
+import { AgregarEmpleadoComponent } from './Aplicacion/agregar-empleado/agregar-empleado.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { NavBarComponent } from './Aplicacion/nav-bar/nav-bar.component';
     FormularioComponent,
     SideMenuComponent,
     NavBarComponent,
+    AgregarEmpleadoComponent,
   ],
   imports: [
     BrowserModule,
