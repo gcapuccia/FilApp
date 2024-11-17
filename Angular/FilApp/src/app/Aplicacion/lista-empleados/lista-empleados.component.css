@@ -1,0 +1,18 @@
+/* .card{
+    padding: 25px;
+    width: min-content;
+}
+
+.card-title{
+    background-color: rgb(67, 211, 67);
+} */
+
+.list-group-item {
+    padding: 1rem;
+  }
+
+  .card-header{
+    background-color: green;
+    color: white;
+    text-align: center;
+  }

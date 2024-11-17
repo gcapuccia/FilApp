@@ -153,6 +153,11 @@
 							</div>
 						</a>
 					</li>
+					<figure class="full-width navLateral-body-tittle-menu">
+						<div>
+							<img src="assets/img/Logo3.jpeg" alt="Avatar" class="circular-image">
+						</div>
+					</figure>
 				</ul>
 			</nav>
 		</div>
@@ -203,7 +208,7 @@
 										<div class="mdl-cell mdl-cell--12-col">
 									        <legend class="text-condensedLight"><i class="zmdi zmdi-border-color"></i> &nbsp; Datos personales</legend><br>
 									    </div>
-									    <div class="mdl-cell mdl-cell--12-col">
+									    <div class="mdl-cell mdl-cell--6-col">
 											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 												<input class="mdl-textfield__input" type="number" pattern="-?[0-9]*(\.[0-9]+)?" id="DNIAdmin">
 												<label class="mdl-textfield__label" for="DNIAdmin">DNI</label>
@@ -224,20 +229,20 @@
 												<span class="mdl-textfield__error">Invalid last name</span>
 											</div>
 										</div>
-										<div class="mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet">
+										<div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet">
 											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 												<input class="mdl-textfield__input" type="tel" pattern="-?[0-9+()- ]*(\.[0-9]+)?" id="phoneAdmin">
 												<label class="mdl-textfield__label" for="phoneAdmin">Telefono</label>
 												<span class="mdl-textfield__error">Invalid phone number</span>
 											</div>
 										</div>
-										<div class="mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet">
+										<!-- <div class="mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet">
 											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 												<input class="mdl-textfield__input" type="email" id="emailAdmin">
 												<label class="mdl-textfield__label" for="emailAdmin">E-mail</label>
 												<span class="mdl-textfield__error">Invalid E-mail</span>
 											</div>
-										</div>
+										</div> -->
 										
 										<div class="mdl-cell mdl-cell--12-col">
 									        <legend class="text-condensedLight"><i class="zmdi zmdi-border-color"></i> &nbsp; Datos de la cuenta</legend><br>
@@ -257,7 +262,7 @@
 											</div>
 										</div>
 										<div class="mdl-cell mdl-cell--12-col">
-									        <legend class="text-condensedLight"><i class="zmdi zmdi-border-color"></i> &nbsp; CHOOSE AVATAR</legend><br>
+									        <legend class="text-condensedLight"><i class="zmdi zmdi-border-color"></i> &nbsp; Seleccione un icono</legend><br>
 									    </div>
 										<div class="mdl-cell mdl-cell--12-col mdl-cell--8-col-tablet">
 											<div class="mdl-grid">
@@ -296,7 +301,7 @@
 										<button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored bg-primary" id="btn-addAdmin">
 											<i class="zmdi zmdi-plus"></i>
 										</button>
-										<div class="mdl-tooltip" for="btn-addAdmin">Add Administrator</div>
+										<div class="mdl-tooltip" for="btn-addAdmin">Agregar empleado</div>
 									</p>
 								</form>
 							</div>
@@ -327,8 +332,18 @@
 									<div class="mdl-list__item mdl-list__item--two-line">
 										<span class="mdl-list__item-primary-content">
 											<i class="zmdi zmdi-account mdl-list__item-avatar"></i>
-											<span>1. Administrator name</span>
-											<span class="mdl-list__item-sub-title">DNI</span>
+											<span>Empleado uno</span>
+											<span class="mdl-list__item-sub-title">Compras</span>
+										</span>
+										
+										<a class="mdl-list__item-secondary-action" href="#!"><i class="zmdi zmdi-more"></i></a>
+									</div>
+									<li class="full-width divider-menu-h"></li>
+									<div class="mdl-list__item mdl-list__item--two-line">
+										<span class="mdl-list__item-primary-content">
+											<i class="zmdi zmdi-account mdl-list__item-avatar"></i>
+											<span>Empleado dos</span>
+											<span class="mdl-list__item-sub-title">Post-venta</span>
 										</span>
 										<a class="mdl-list__item-secondary-action" href="#!"><i class="zmdi zmdi-more"></i></a>
 									</div>
@@ -336,8 +351,8 @@
 									<div class="mdl-list__item mdl-list__item--two-line">
 										<span class="mdl-list__item-primary-content">
 											<i class="zmdi zmdi-account mdl-list__item-avatar"></i>
-											<span>2. Administrator name</span>
-											<span class="mdl-list__item-sub-title">DNI</span>
+											<span>Empleado tres</span>
+											<span class="mdl-list__item-sub-title">Compras</span>
 										</span>
 										<a class="mdl-list__item-secondary-action" href="#!"><i class="zmdi zmdi-more"></i></a>
 									</div>
@@ -345,8 +360,8 @@
 									<div class="mdl-list__item mdl-list__item--two-line">
 										<span class="mdl-list__item-primary-content">
 											<i class="zmdi zmdi-account mdl-list__item-avatar"></i>
-											<span>3. Administrator name</span>
-											<span class="mdl-list__item-sub-title">DNI</span>
+											<span>Empleado cuatro</span>
+											<span class="mdl-list__item-sub-title">Retiro en local</span>
 										</span>
 										<a class="mdl-list__item-secondary-action" href="#!"><i class="zmdi zmdi-more"></i></a>
 									</div>
@@ -354,18 +369,11 @@
 									<div class="mdl-list__item mdl-list__item--two-line">
 										<span class="mdl-list__item-primary-content">
 											<i class="zmdi zmdi-account mdl-list__item-avatar"></i>
-											<span>4. Administrator name</span>
-											<span class="mdl-list__item-sub-title">DNI</span>
+											<span>Empleado cinco</span>
+											<span class="mdl-list__item-sub-title">Retiro en local</span>
 										</span>
-										<a class="mdl-list__item-secondary-action" href="#!"><i class="zmdi zmdi-more"></i></a>
-									</div>
-									<li class="full-width divider-menu-h"></li>
-									<div class="mdl-list__item mdl-list__item--two-line">
-										<span class="mdl-list__item-primary-content">
-											<i class="zmdi zmdi-account mdl-list__item-avatar"></i>
-											<span>5. Administrator name</span>
-											<span class="mdl-list__item-sub-title">DNI</span>
-										</span>
+									</button>
+								  </body>
 										<a class="mdl-list__item-secondary-action" href="#!"><i class="zmdi zmdi-more"></i></a>
 									</div>
 								</div>

@@ -460,6 +460,11 @@ html, body{
 	position: relative;
 	transition: all .3s ease-in-out;
 }
+.circular-image {
+	border-radius: 50%;
+	width: 50px; /* Ajusta el ancho según tus necesidades */
+	height: 50px;  
+}
 .menu-principal > li > a:hover{
 	background-color: var(--acent-color);
 }

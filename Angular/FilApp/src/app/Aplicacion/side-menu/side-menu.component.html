@@ -1,0 +1,45 @@
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-3 col-lg-2">
+        <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvas" data-bs-keyboard="false" data-bs-backdrop="false">
+          <div class="offcanvas-header">
+            <h6 class="offcanvas-title d-none d-sm-block" id="offcanvas">Menu</h6>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body px-0">
+            <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-start" id="menu">
+              <li class="nav-item">
+                <a href="#" class="nav-link text-truncate">
+                  <i class="fs-5 bi-house"></i><span class="ms-1 d-none d-sm-inline">Inicio</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link text-truncate">
+                  <i class="bi bi-people-fill"></i><span class="ms-1 d-none d-sm-inline">Empleados</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link text-truncate">
+                  <i class="bi bi-file-bar-graph"></i><span class="ms-1 d-none d-sm-inline">Metricas</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link text-truncate">
+                  <i class="fs-5 bi-house"></i><span class="ms-1 d-none d-sm-inline">Lista de turnos</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas" aria-controls="offcanvas">
+          <i class="bi bi-list fs-4"></i>
+        </button>
+      </div>
+      <div class="col-md-9 col-lg-10">
+        <app-nav-bar></app-nav-bar>
+        <app-formulario></app-formulario>
+      </div>
+    </div>
+  </div>
+ 

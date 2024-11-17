@@ -1,0 +1,19 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  
+}
+
+.card {
+  width: 300px;
+  background-color: rgb(227, 216, 216);
+}
+
+.text-center {
+  text-align: center;
+}
+.form-group {
+  text-align: center;
+  }

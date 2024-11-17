@@ -1,1 +1,61 @@
-<p>home works!</p>
+
+<nav class="navbar bg-body-tertiary">
+    <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      
+       <nav class="navbar bg-body-tertiary ">
+        <div class="container-fluid">     
+            <div>            
+               
+              </div>
+            <div>
+                <a href="#" class="nav-link text-truncate" style="display: inline-block;">
+                    <i class="bi bi-power" style="margin:10px ;"></i>
+                </a>
+                <span>Usuario nombre</span>  
+            </div> 
+          </div>
+      </nav> 
+      
+      
+      <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+        <div class="offcanvas-header">
+          <h3 class="offcanvas-title" id="offcanvasNavbarLabel" style="color: rgb(92, 231, 162);">Fillapp</h3>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+                <a href="#" class="nav-link text-truncate">
+                    <i class="fs-5 bi-house"></i><span class="ms-1 d-none d-sm-inline">Inicio</span>
+                  </a>
+            </li>
+            <li class="list-group-item">
+                <a href="#" class="nav-link text-truncate">
+                    <i class="bi bi-people-fill"></i><span class="ms-1 d-none d-sm-inline">Empleados</span>
+                  </a>
+            </li>
+            <li class="list-group-item">
+                <a href="#" class="nav-link text-truncate">
+                    <i class="bi bi-file-bar-graph"></i><span class="ms-1 d-none d-sm-inline">Metricas</span>
+                  </a>
+                </li>
+            <li class="list-group-item">
+                <a href="#" class="nav-link text-truncate">
+                    <i class="fs-5 bi-house"></i><span class="ms-1 d-none d-sm-inline">Lista de turnos</span>
+                  </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <div class="principal">
+    <app-formulario></app-formulario>
+    <app-agregar-empleado></app-agregar-empleado>
+    <app-lista-empleados></app-lista-empleados>
+    <app-lista-turnos></app-lista-turnos>
+  </div>
