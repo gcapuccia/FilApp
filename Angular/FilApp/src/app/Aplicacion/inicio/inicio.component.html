@@ -25,7 +25,34 @@
 
 </body> -->
 <div class="container">
-    <div class="row">
+    <div class="row mb-4">
+        <div class="col-md-4">
+            <div class="card text-center" (mouseenter)="onMouseEnter()" (mouseleave)="onMouseLeave()">
+                <div class="card-body">
+                    <h5 class="card-title">4 Empleados logueados</h5>
+                    <i class="bi bi-person-circle fs-3"></i>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card text-center" (mouseenter)="onMouseEnter()" (mouseleave)="onMouseLeave()">
+                <div class="card-body">
+                    <h5 class="card-title">17 clientes atendidos</h5>
+                    <i class="bi bi-person-circle fs-3"></i>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card text-center" (mouseenter)="onMouseEnter()" (mouseleave)="onMouseLeave()">
+                <div class="card-body">
+                    <h5 class="card-title">Tiempo medio de espera</h5>
+                    <span>12 minutos</span>
+                </div>
+            </div>
+        </div>
+    </div> 
+    <span></span>
+    <div class="row mb-4">
         <div class="col-md-4">
             <div class="card text-center" (mouseenter)="onMouseEnter()" (mouseleave)="onMouseLeave()">
                 <div class="card-body">
@@ -52,4 +79,24 @@
         </div>
     </div> 
     
+</div>
+<div class="contenedor">
+    <div class="form-container">
+        <div class="form-header">
+            <h2>Datos Cliente</h2>
+        </div>
+        <div class="form-body">
+            <div class="form-group">
+                <input type="text" placeholder="Juan">
+                <input type="text" placeholder="Perez">
+            </div>
+            <div class="form-group">
+                <input type="text" placeholder="Compras">
+                <input type="text" placeholder="Sin comentarios">
+            </div>
+            <div class="form-group">
+                <input type="email" placeholder="JuanPerez@gmail.com">
+            </div>
+        </div>
+    </div>
 </div>
