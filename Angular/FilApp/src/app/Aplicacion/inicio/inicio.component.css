@@ -1,0 +1,24 @@
+.card {
+    cursor: pointer;
+    transition: color 0.3s ease-in-out;
+    background-color: #f8f9fa;  /*Color de fondo de la tarjeta */
+    border: 1px solid #ced4da; /*Borde de la tarjeta */
+    border-radius: 5px; /* Bordes redondeados */
+  }
+
+  .card {
+    cursor: pointer;
+    transition: color 0.3s ease-in-out;
+    background-color: #f8f9fa;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    min-height: 125px;
+  }
+  
+  
+  
+  .card:hover .card-title,
+  .card:hover .bi-person-circle {
+    color: #4076c7; /* Tono de celeste más oscuro para el hover */
+  }
+

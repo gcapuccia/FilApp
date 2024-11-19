@@ -10,13 +10,16 @@
     display: flex;
     flex-wrap: wrap;
   }
-  .container {
-    
+  .container {    
     border: solid 1px gray;
     padding: 25px;
-    background-color: rgb(199, 194, 194);
+    
   }
   h2{
     text-align: center;
-    color: green;
+    color:  white;
+    margin-left: -25px;
+    margin-right: -25px;
+    margin-top: -25px;
+    background-color: rgb(50, 102, 180);
   }
