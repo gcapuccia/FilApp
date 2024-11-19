@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario para Vendedores</title>
+
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+
+</head>
+<body>
+    <h1>Formulario para Vendedores</h1>
+    <form id="vendedorForm">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required><br><br>
+
+        <label for="apellido">Apellido:</label>
+        <input type="text" id="apellido" name="apellido" required><br><br>
+
+        <label for="usuario">Usuario:</label>
+        <input type="text" id="usuario" name="usuario" required><br><br>
+
+        <label for="pass">Contraseña:</label>
+        <input type="password" id="pass" name="pass" required><br><br>
+
+        <label for="idCargo">ID Cargo:</label>
+        <input type="number" id="idCargo" name="idCargo" required><br><br>
+
+        <label for="idVendedor">ID Vendedor:</label>
+        <input type="number" id="idVendedor" name="idVendedor" required><br><br>
+
+        <label for="mail">Correo Electrónico:</label>
+        <input type="email" id="mail" name="mail" required><br><br>
+
+        <label for="userCreador">Usuario Creador:</label>
+        <input type="text" id="userCreador" name="userCreador" required><br><br>
+
+        <button type="submit">Enviar</button>
+    </form>
+
+
+
+    <h1>Lista de Empleados</h1>
+    <button id="loadData">Cargar Empleados</button>
+    <table id="employeeTable">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Correo Electrónico</th>
+                <th>ID Cargo</th>
+                <th>ID Vendedor</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Los datos se cargarán aquí -->
+        </tbody>
+    </table>
+
+
+
+
+    <script>
+
+        //CODIGO POST PARA CREAR USUARIO NUEVO
+        document.getElementById('vendedorForm').addEventListener('submit', async function(event) {
+            event.preventDefault();
+
+            const formData = {
+                nombre: document.getElementById('nombre').value,
+                apellido: document.getElementById('apellido').value,
+                usuario: document.getElementById('usuario').value,
+                pass: document.getElementById('pass').value,
+                idCargo: document.getElementById('idCargo').value,
+                idVendedor: document.getElementById('idVendedor').value,
+                mail: document.getElementById('mail').value,
+                userCreador: document.getElementById('userCreador').value
+            };
+
+            console.log('Datos enviados:', formData); // Mostrar los datos en la consola
+
+            fetch('http://localhost/FilApp/php/api/Empleados/Pempleados.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(formData)
+            })
+            .then(response => response.json())
+            .then(data => {
+                alert('Respuesta del servidor: ' + JSON.stringify(data));
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        });
+
+
+        //CODIGO GET PARA MOSTRAR TABLA EMPLEADOS
+        document.getElementById('loadData').addEventListener('click', async function() {
+            const url = 'http://localhost/FilApp/php/api/Empleados/empleados.php'; // Cambia esto a la URL de tu API
+
+            try {
+                const response = await fetch(url);
+                const data = await response.json();
+                
+                console.log('Datos recibidos:', data); // Mostrar los datos en la consola
+                
+                const employeeTable = document.getElementById('employeeTable').getElementsByTagName('tbody')[0];
+                employeeTable.innerHTML = ''; // Limpiar la tabla antes de cargar nuevos datos
+
+                // Verificar que data es un array
+                if (Array.isArray(data.data)) {
+                    data.data.forEach(empleado => {
+                        const row = employeeTable.insertRow();
+                        row.insertCell(0).textContent = empleado.id;
+                        row.insertCell(1).textContent = empleado.Nombre;
+                        row.insertCell(2).textContent = empleado.Apellido;
+                        row.insertCell(3).textContent = empleado.Mail;
+                        row.insertCell(4).textContent = empleado.idCargo;
+                        row.insertCell(5).textContent = empleado.idVendedor;
+                    });
+                } else {
+                    employeeTable.innerHTML = '<tr><td colspan="6">No se encontraron empleados</td></tr>';
+                }
+
+            } catch (error) {
+                console.error('Error:', error);
+                alert('Error al cargar los empleados');
+            }
+        });
+
+
+        
+
+
+
+
+
+    </script>
+</body>
+</html>
