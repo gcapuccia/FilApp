@@ -59,37 +59,33 @@
 </div> -->
 
 <div class="main-layout">
-  
+
   <!-- Sidebar -->
-  
+
   <aside class="sidebar" [class.hidden]="isSidebarVisible">
     <div class="sidebar-header">
       <h3>FillApp</h3>
     </div>
-    
+
     <ul class="list-unstyled components">
       <li>
-        <a href="#"> <i class="fs-5 bi-house"></i> Inicio </a>
-       
+        <a routerLink="inicio"> <i class="fs-5 bi-house"></i> Inicio </a>
+
       </li>
       <li>
-        <a href="#"> <i class="bi bi-people-fill"></i> Empleados</a>
+        <a routerLink="lista-empleados"> <i class="bi bi-people-fill"></i> Empleados</a>
       </li>
       <li>
         <a href="#"> <i class="bi bi-file-bar-graph"></i> Métricas</a>
       </li>
       <li>
-        <a href="#"> <i class="bi bi-people-fill"></i> Lista de turnos</a>
+        <a routerLink="lista-turnos"> <i class="bi bi-people-fill"></i> Lista de turnos</a>
       </li>
     </ul>
   </aside>
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <button
-      class="btn btn-outline-light"
-      (click)="toggleSidebar()"
-      aria-label="Toggle navigation"
-    >
+    <button class="btn btn-outline-light" (click)="toggleSidebar()" aria-label="Toggle navigation">
       <i class="bi bi-list"></i> <!-- Botón de hamburguesa -->
     </button>
     <div class="ms-auto d-flex align-items-center">
@@ -97,13 +93,9 @@
       <button class="btn btn-outline-danger" (click)="logout()">Salir</button>
     </div>
   </nav>
-
-
   <!-- Content -->
   <div class="content">
-      <app-lista-empleados></app-lista-empleados>
-      <app-agregar-empleado></app-agregar-empleado>
-      <app-formulario></app-formulario>
-      <app-lista-turnos></app-lista-turnos>
-      <app-inicio></app-inicio>
-</div>
+    <router-outlet></router-outlet>
+  </div>
+
+  </div>

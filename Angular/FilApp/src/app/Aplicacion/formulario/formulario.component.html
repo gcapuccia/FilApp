@@ -16,13 +16,13 @@
               <div class="form-group">
                   <label for="password">Contraseña:</label>
                   <input type="password" id="password" name="password" class="form-control" formControlName="password" >
-                  <div *ngIf="controles['password'].errors?.['required']">
+                  <div *ngIf="controles['password'].errors?.['minLength']">
                     <p style="color: red">Debe ingresar un valor</p>
                   </div>
               </div>
               <br>
               <div class="form-group">
-                  <button type="submit" class="btn btn-primary">Ingresar</button>
+                  <button type="submit" class="btn btn-primary" (click)="Ingresar()">Ingresar</button>
               </div>
               <br>
               <div class="form-group">
