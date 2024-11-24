@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 26-10-2024 a las 23:21:13
+-- Tiempo de generación: 20-11-2024 a las 01:22:08
 -- Versión del servidor: 10.4.27-MariaDB
 -- Versión de PHP: 8.1.12
 
@@ -70,7 +70,8 @@ INSERT INTO `clientes` (`id`, `nombre`, `apellido`, `mail`, `ingreso`, `inicioAt
 (6, 'juanito', 'Gil', 'juan.perez@example.com', '2024-09-10 12:00:00', '2024-09-30 20:42:41', NULL, 'gcapucci', 3, '1'),
 (35, 'guido', 'Capucciati', 'guidoca_94@hotmail.com', '2024-10-01 20:19:49', '2024-10-04 18:04:16', '2024-10-01 20:20:58', 'Gcapucci', 2, 'Compras'),
 (36, 'Rodrigo', 'Vera', 'Rod.ver@gmail.com', '2024-10-04 18:02:06', '2024-10-04 18:22:22', '2024-10-04 18:23:02', 'LucasM', 3, 'PostVenta'),
-(38, 'lucas', 'mansilla', 'lucas@gmail.com', '2024-10-04 21:29:35', '2024-10-04 21:32:11', '2024-10-04 21:32:32', 'gcapucci', 3, 'Compras');
+(38, 'lucas', 'mansilla', 'lucas@gmail.com', '2024-10-04 21:29:35', '2024-10-04 21:32:11', '2024-10-04 21:32:32', 'gcapucci', 3, 'Compras'),
+(39, 'guido', 'Capucciati', 'guidoca_94@hotmail.com', '2024-11-15 21:00:24', NULL, NULL, NULL, 0, 'Compras');
 
 -- --------------------------------------------------------
 
@@ -87,8 +88,6 @@ CREATE TABLE `empleados` (
   `idCargo` int(11) NOT NULL,
   `idVendedor` int(11) NOT NULL,
   `Mail` varchar(100) NOT NULL,
-  `Domicilio` varchar(100) DEFAULT NULL,
-  `Localidad` varchar(100) DEFAULT NULL,
   `UltimoLogin` date DEFAULT NULL,
   `UserCreador` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
@@ -97,11 +96,13 @@ CREATE TABLE `empleados` (
 -- Volcado de datos para la tabla `empleados`
 --
 
-INSERT INTO `empleados` (`id`, `Nombre`, `Apellido`, `Usuario`, `pass`, `idCargo`, `idVendedor`, `Mail`, `Domicilio`, `Localidad`, `UltimoLogin`, `UserCreador`) VALUES
-(1, 'Guido', 'Capucciati', 'gcapucci', '', 3, 500876, 'guido.capucciati@filapp.com', '9 de julio', 'Gutierrez', '0000-00-00', NULL),
-(2, 'Lucas', 'Mansilla', 'lmansi', '', 4, 400520, 'lucas.mansilla@filapp.com', '25 de mayo', 'Longchams', '0000-00-00', NULL),
-(3, 'Gaston', 'Mansilla', 'gmansi', '', 2, 500423, 'gaston.mansilla@filapp.com', 'Cochabamba 1234', 'Lanus', '0000-00-00', NULL),
-(4, 'Rodrigo', 'Vera', 'rvera', '', 1, 100412, 'rodrigo.vera@filapp.com', 'calle falsa 1234', 'Sprinfild', '0000-00-00', NULL);
+INSERT INTO `empleados` (`id`, `Nombre`, `Apellido`, `Usuario`, `pass`, `idCargo`, `idVendedor`, `Mail`, `UltimoLogin`, `UserCreador`) VALUES
+(1, 'Guido', 'Capucciati', 'gcapucci', '', 3, 500876, 'guido.capucciati@filapp.com', '0000-00-00', NULL),
+(2, 'Lucas', 'Mansilla', 'lmansi', '', 4, 400520, 'lucas.mansilla@filapp.com', '0000-00-00', NULL),
+(3, 'Gaston', 'Mansilla', 'gmansi', '', 2, 500423, 'gaston.mansilla@filapp.com', '0000-00-00', NULL),
+(4, 'Rodrigo', 'Vera', 'rvera', '', 1, 100412, 'rodrigo.vera@filapp.com', '0000-00-00', NULL),
+(10, 'rodo', 'vera', 'rodovera', '123123', 2, 2, 'rodovera@filapp.com', NULL, 'verarodo'),
+(11, 'GASTON', 'VERA', 'GASTONVERA', '123123', 3, 123455, 'gaston.vera@filapp.com', NULL, 'gastonvera');
 
 -- --------------------------------------------------------
 
@@ -170,8 +171,7 @@ ALTER TABLE `clientes`
 -- Indices de la tabla `empleados`
 --
 ALTER TABLE `empleados`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `idCargo` (`idCargo`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indices de la tabla `resenas`
@@ -199,13 +199,13 @@ ALTER TABLE `cargos`
 -- AUTO_INCREMENT de la tabla `clientes`
 --
 ALTER TABLE `clientes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
 
 --
 -- AUTO_INCREMENT de la tabla `empleados`
 --
 ALTER TABLE `empleados`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT de la tabla `resenas`

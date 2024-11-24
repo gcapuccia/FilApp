@@ -38,15 +38,6 @@ if ($motivo === false) {
 }
 
 
-/* // Obtener parámetros de la URL
-$nombre = isset($_GET['nombre']) ? htmlspecialchars(strip_tags($_GET['nombre'])) : null;
-$apellido = isset($_GET['apellido']) ? htmlspecialchars(strip_tags($_GET['apellido'])) : null;
-$mail = isset($_GET['mail']) ? filter_var($_GET['mail'], FILTER_VALIDATE_EMAIL) : null;
-//$ingreso = isset($_GET['ingreso']) ? htmlspecialchars(strip_tags($_GET['ingreso'])) : null;
-//$enEspera = isset($_GET['enEspera']) ? filter_var($_GET['enEspera'], FILTER_VALIDATE_INT) : null;
-$enEspera = 0;
-$motivo = isset($_GET['motivo']) ? filter_var($_GET['motivo'], FILTER_VALIDATE_INT) : null; */
-
 // Verificar que todos los campos requeridos estén presentes y válidos
 if ($nombre && $apellido && $mail && $enEspera !== false && $motivo !== false && empty($errores)) {
     try {
