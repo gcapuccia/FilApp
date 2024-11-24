@@ -14,6 +14,7 @@ import { NavBarComponent } from './Aplicacion/nav-bar/nav-bar.component';
 import { AgregarEmpleadoComponent } from './Aplicacion/agregar-empleado/agregar-empleado.component';
 import { ListaEmpleadosComponent } from './Aplicacion/lista-empleados/lista-empleados.component';
 import { ListaTurnosComponent } from './Aplicacion/lista-turnos/lista-turnos.component';
+import { InicioComponent } from './Aplicacion/inicio/inicio.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { ListaTurnosComponent } from './Aplicacion/lista-turnos/lista-turnos.com
     AgregarEmpleadoComponent,
     ListaEmpleadosComponent,
     ListaTurnosComponent,
+    InicioComponent,
   ],
   imports: [
     BrowserModule,

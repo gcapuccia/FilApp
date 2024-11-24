@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { Empleado } from 'src/app/models/Empleado';
 import {EmpleadoService} from '../../services/empleado.service'; 
 
@@ -13,7 +14,7 @@ export class FormularioComponent  {
   loginForm: FormGroup;
    listaEmpleados: Empleado[]=[]
 
-  constructor(public empleadoService: EmpleadoService){
+  constructor(public empleadoService: EmpleadoService, private router: Router){
     this.loginForm = new FormGroup({
 
       usuario: new FormControl('', [Validators.email, Validators.required]),
@@ -28,6 +29,7 @@ export class FormularioComponent  {
   get controles(){
     return this.loginForm.controls;
   }
+  
   
  EnviarFormulario() {
    const user = this.loginForm.get('usuario')?.value;
@@ -46,6 +48,8 @@ export class FormularioComponent  {
      console.error('listaEmpleados is not yet available');
    }
  }
+ Ingresar(){
+  this.router.navigate(['/home']);
+ }
 
-//  da error porque no levante el server
 }

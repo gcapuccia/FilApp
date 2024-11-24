@@ -1,3 +1,87 @@
-.principal{
-    padding: 25px;
-}
+.main-layout {
+    /* display: flex; */
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  .navbar {
+    width: 100%;
+    padding: 0.5rem 1rem;
+    display: flex;
+    justify-content: space-between; /* Asegura que los botones queden alineados */
+    align-items: center;
+    background-color: #343a40;
+    color: white;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+  }
+  
+  .sidebar {
+    width: 250px;
+    /* background-color: rgb(15, 47, 90); */
+    color: white;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    transform: translateX(-250px); /* Oculta el aside inicialmente */
+    transition: transform 0.3s ease;
+    /* background-image: url('src\assets\FontNavLateral.jpg'); */
+    background-size: cover;
+	  color: #fff;
+    background-color: rgba(43, 43, 44, .9);
+    /* text-align: center; */
+    
+  }
+  
+  .sidebar.visible {
+    transform: translateX(0);
+  }
+  
+  .sidebar-header {
+    margin-top: 53px;
+    padding: 1rem;
+    /* background: #7cd14bfa; */
+    background-color: rgb(12, 161, 12);
+    text-align: center;
+  }
+  
+  .sidebar .components {
+    padding: 1rem;
+    list-style: none;
+    margin: 0;
+  }
+  
+  .sidebar .components li {
+    padding: 0.5rem 0;
+    margin-bottom: 15px;
+    align-items: center;
+  }
+  
+  .sidebar .components li a {
+    color: white;
+    text-decoration: none;
+   
+    
+  }
+  
+  .content {
+    margin-top: 56px;
+    margin-left: 0;
+    padding: 1rem;
+    transition: margin-left 0.3s ease;
+     /*display: flex; Establece el contenedor como flex */
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    height: calc(100vh - 56px); /* Ajusta la altura para ocupar el espacio restante */
+    overflow: auto;
+  }
+  
+  .content.sidebar-visible {
+    margin-left: 250px; /* Ajusta este valor si el ancho del aside es diferente */
+    /* width: fit-content; */
+    
+  }
+  

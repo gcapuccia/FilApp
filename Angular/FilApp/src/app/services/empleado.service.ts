@@ -8,7 +8,7 @@ import { Empleado } from 'src/app/models/Empleado';
 })
 export class EmpleadoService {
 
-private urlApi= "http://localhost/FilApp/php/api/empleados.php";
+private urlApi= "/api/empleados.php";
 
   constructor(private http: HttpClient) { }
 

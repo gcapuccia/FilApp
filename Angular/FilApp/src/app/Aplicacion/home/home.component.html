@@ -1,61 +1,101 @@
-
-<nav class="navbar bg-body-tertiary">
-    <div class="container-fluid">
-      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      
-       <nav class="navbar bg-body-tertiary ">
-        <div class="container-fluid">     
-            <div>            
-               
-              </div>
-            <div>
-                <a href="#" class="nav-link text-truncate" style="display: inline-block;">
-                    <i class="bi bi-power" style="margin:10px ;"></i>
-                </a>
-                <span>Usuario nombre</span>  
-            </div> 
-          </div>
-      </nav> 
-      
-      
-      <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-        <div class="offcanvas-header">
-          <h3 class="offcanvas-title" id="offcanvasNavbarLabel" style="color: rgb(92, 231, 162);">Fillapp</h3>
-          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+<!-- <nav class="navbar bg-body-tertiary">
+  <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+      aria-controls="offcanvasNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <nav class="navbar bg-body-tertiary ">
+      <div class="container-fluid">
+        <div>
         </div>
-        <div class="offcanvas-body">
-          
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item">
-                <a href="#" class="nav-link text-truncate">
-                    <i class="fs-5 bi-house"></i><span class="ms-1 d-none d-sm-inline">Inicio</span>
-                  </a>
-            </li>
-            <li class="list-group-item">
-                <a href="#" class="nav-link text-truncate">
-                    <i class="bi bi-people-fill"></i><span class="ms-1 d-none d-sm-inline">Empleados</span>
-                  </a>
-            </li>
-            <li class="list-group-item">
-                <a href="#" class="nav-link text-truncate">
-                    <i class="bi bi-file-bar-graph"></i><span class="ms-1 d-none d-sm-inline">Metricas</span>
-                  </a>
-                </li>
-            <li class="list-group-item">
-                <a href="#" class="nav-link text-truncate">
-                    <i class="fs-5 bi-house"></i><span class="ms-1 d-none d-sm-inline">Lista de turnos</span>
-                  </a>
-            </li>
-          </ul>
+        <div>
+          <a href="#" class="nav-link text-truncate" style="display: inline-block;">
+            <i class="bi bi-power" style="margin:10px ;"></i>
+          </a>
+          <span>Usuario nombre</span>
         </div>
       </div>
+    </nav>
+
+
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+      <div class="offcanvas-header">
+        <h3 class="offcanvas-title" id="offcanvasNavbarLabel" style="color: rgb(92, 231, 162);">Fillapp</h3>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">
+            <a href="#" class="nav-link text-truncate">
+              <i class="fs-5 bi-house"></i><span class="ms-1 d-none d-sm-inline">Inicio</span>
+            </a>
+          </li>
+          <li class="list-group-item">
+            <a href="#" class="nav-link text-truncate">
+              <i class="bi bi-people-fill"></i><span class="ms-1 d-none d-sm-inline">Empleados</span>
+            </a>
+          </li>
+          <li class="list-group-item">
+            <a href="#" class="nav-link text-truncate">
+              <i class="bi bi-file-bar-graph"></i><span class="ms-1 d-none d-sm-inline">Metricas</span>
+            </a>
+          </li>
+          <li class="list-group-item">
+            <a href="#" class="nav-link text-truncate">
+              <i class="fs-5 bi-house"></i><span class="ms-1 d-none d-sm-inline">Lista de turnos</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
+<div class="principal">
+  <app-formulario></app-formulario>
+  <app-agregar-empleado></app-agregar-empleado>
+  <app-lista-empleados></app-lista-empleados>
+  <app-lista-turnos></app-lista-turnos>
+</div> -->
+
+<div class="main-layout">
+
+  <!-- Sidebar -->
+
+  <aside class="sidebar" [class.hidden]="isSidebarVisible">
+    <div class="sidebar-header">
+      <h3>FillApp</h3>
+    </div>
+
+    <ul class="list-unstyled components">
+      <li>
+        <a routerLink="inicio"> <i class="fs-5 bi-house"></i> Inicio </a>
+
+      </li>
+      <li>
+        <a routerLink="lista-empleados"> <i class="bi bi-people-fill"></i> Empleados</a>
+      </li>
+      <li>
+        <a href="#"> <i class="bi bi-file-bar-graph"></i> Métricas</a>
+      </li>
+      <li>
+        <a routerLink="lista-turnos"> <i class="bi bi-people-fill"></i> Lista de turnos</a>
+      </li>
+    </ul>
+  </aside>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <button class="btn btn-outline-light" (click)="toggleSidebar()" aria-label="Toggle navigation">
+      <i class="bi bi-list"></i> <!-- Botón de hamburguesa -->
+    </button>
+    <div class="ms-auto d-flex align-items-center">
+      <span class="me-3">{{ userName }}</span> <!-- Nombre del usuario -->
+      <button class="btn btn-outline-danger" (click)="logout()">Salir</button>
     </div>
   </nav>
-  <div class="principal">
-    <app-formulario></app-formulario>
-    <app-agregar-empleado></app-agregar-empleado>
-    <app-lista-empleados></app-lista-empleados>
-    <app-lista-turnos></app-lista-turnos>
+  <!-- Content -->
+  <div class="content">
+    <router-outlet></router-outlet>
+  </div>
+
   </div>

@@ -1,77 +1,80 @@
+<div class="container">
+  <div class="card">
+    <div class="card-header">
+      <h5 class="card-title">Lista de Empleados</h5>
 
-
-  <div class="container">
-    <div class="card">
-      <div class="card-header">
-        <h5 class="card-title">Lista de Empleados</h5>
-       
-      </div>
-      <ul class="list-group list-group-flush">
-        <!-- aca deberia hacer un forech que recorra la lista de empleados y muestre 
-        por cada uno la info requerida -->
-        <li class="list-group-item">
-          <div class="d-flex justify-content-between align-items-center">
-            <div class="me-2">
-              <i class="bi bi-person-circle"></i>
-              Empleado uno <span> Compras </span>
-            </div>
-            
-            <div class="dropdown">
-                <button class="btn btn-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                  Asignar
-                </button>
-                <ul class="dropdown-menu">
-                    <!-- estas opciones vienen del servicio "cargo", deberia 
-                    mostrar las opciones que se configuraron en la app -->
-                  <li><a class="dropdown-item" href="#">Compras</a></li>
-                  <li><a class="dropdown-item" href="#">Retiro</a></li>
-                  <li><a class="dropdown-item" href="#">Post Venta</a></li>
-                </ul>
-              </div> 
-          </div>
-        </li>
-        <li class="list-group-item">
-          <div class="d-flex justify-content-between align-items-center">
-            <div class="me-2">
-              <i class="bi bi-person-circle"></i>
-              Empleado dos
-            </div>
-            
-            <div class="dropdown">
-                <button class="btn btn-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                  Asignar
-                </button>
-                <ul class="dropdown-menu">
-                    <!-- estas opciones vienen del servicio "cargo", deberia 
-                    mostrar las opciones que se configuraron en la app -->
-                  <li><a class="dropdown-item" href="#">Compras</a></li>
-                  <li><a class="dropdown-item" href="#">Retiro</a></li>
-                  <li><a class="dropdown-item" href="#">Post Venta</a></li>
-                </ul>
-              </div> 
-          </div>
-        </li>
-        <li class="list-group-item">
-          <div class="d-flex justify-content-between align-items-center">
-            <div class="me-2">
-              <i class="bi bi-person-circle"></i>
-              Empleado tres
-            </div>
-            
-            <div class="dropdown">
-                <button class="btn btn-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                  Asignar
-                </button>
-                <ul class="dropdown-menu">
-                    <!-- estas opciones vienen del servicio "cargo", deberia 
-                    mostrar las opciones que se configuraron en la app -->
-                  <li><a class="dropdown-item" href="#">Compras</a></li>
-                  <li><a class="dropdown-item" href="#">Retiro</a></li>
-                  <li><a class="dropdown-item" href="#">Post Venta</a></li>
-                </ul>
-              </div> 
-          </div>
-        </li>
-        </ul>
     </div>
+    <ul class="list-group list-group-flush">
+      <!-- aca deberia hacer un forech que recorra la lista de empleados y muestre 
+        por cada uno la info requerida -->
+      <li class="list-group-item">
+        <div class="d-flex justify-content-between align-items-center">
+          <div class="me-2">
+            <i class="bi bi-person-circle"></i>
+            Empleado uno <span> Compras </span>
+          </div>
+
+          <div class="dropdown">
+            <button class="btn btn-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+              Asignar
+            </button>
+            <ul class="dropdown-menu">
+              <!-- estas opciones vienen del servicio "cargo", deberia 
+                    mostrar las opciones que se configuraron en la app -->
+              <li><a class="dropdown-item" href="#">Compras</a></li>
+              <li><a class="dropdown-item" href="#">Retiro</a></li>
+              <li><a class="dropdown-item" href="#">Post Venta</a></li>
+            </ul>
+          </div>
+        </div>
+      </li>
+      <li class="list-group-item">
+        <div class="d-flex justify-content-between align-items-center">
+          <div class="me-2">
+            <i class="bi bi-person-circle"></i>
+            Empleado dos
+          </div>
+
+          <div class="dropdown">
+            <button class="btn btn-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+              Asignar
+            </button>
+            <ul class="dropdown-menu">
+              <!-- estas opciones vienen del servicio "cargo", deberia 
+                    mostrar las opciones que se configuraron en la app -->
+              <li><a class="dropdown-item" href="#">Compras</a></li>
+              <li><a class="dropdown-item" href="#">Retiro</a></li>
+              <li><a class="dropdown-item" href="#">Post Venta</a></li>
+            </ul>
+          </div>
+        </div>
+      </li>
+      <li class="list-group-item">
+        <div class="d-flex justify-content-between align-items-center">
+          <div class="me-2">
+            <i class="bi bi-person-circle"></i>
+            Empleado tres
+          </div>
+
+          <div class="dropdown">
+            <button class="btn btn-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+              Asignar
+            </button>
+            <ul class="dropdown-menu">
+              <!-- estas opciones vienen del servicio "cargo", deberia 
+                    mostrar las opciones que se configuraron en la app -->
+              <li><a class="dropdown-item" href="#">Compras</a></li>
+              <li><a class="dropdown-item" href="#">Retiro</a></li>
+              <li><a class="dropdown-item" href="#">Post Venta</a></li>
+            </ul>
+          </div>
+        </div>
+      </li>
+    </ul>
   </div>
+</div>
+<br>
+<br>
+<div>
+<app-agregar-empleado></app-agregar-empleado>
+</div>
