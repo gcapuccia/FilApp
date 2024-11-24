@@ -1,0 +1,134 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>AdminEmp</title>
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/sweetalert2.css">
+	<link rel="stylesheet" href="css/material.min.css">
+	<link rel="stylesheet" href="css/material-design-iconic-font.min.css">
+	<link rel="stylesheet" href="css/jquery.mCustomScrollbar.css">
+	<link rel="stylesheet" href="css/main.css">
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	<script>window.jQuery || document.write('<script src="js/jquery-1.11.2.min.js"><\/script>')</script>
+	<script src="js/material.min.js" ></script>
+	<script src="js/sweetalert2.min.js" ></script>
+	<script src="js/jquery.mCustomScrollbar.concat.min.js" ></script>
+	<script src="js/main.js" ></script>
+</head>
+<body>
+		<div class="mdl-tabs__panel is-active" id="editarEmpleado">
+			<div class="mdl-grid">
+				<div class="mdl-cell mdl-cell--12-col">
+					<div class="full-width panel mdl-shadow--2dp">
+						<div class="full-width panel-tittle bg-primary text-center tittles">
+							Editar Empleado
+						</div>
+						<div class="full-width panel-content">
+							<form>
+								<div class="mdl-grid">
+									<div class="mdl-cell mdl-cell--12-col">
+										<legend class="text-condensedLight"><i class="zmdi zmdi-border-color"></i> &nbsp; Datos personales</legend><br>
+									</div>
+									<div class="mdl-cell mdl-cell--6-col">
+										<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+											<input class="mdl-textfield__input" type="number" pattern="-?[0-9]*(\.[0-9]+)?" id="DNIAdmin">
+											<label class="mdl-textfield__label" for="DNIAdmin">DNI</label>
+											<span class="mdl-textfield__error">Invalid number</span>
+										</div>
+									</div>
+									<div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet">
+										<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+											<input class="mdl-textfield__input" type="text" pattern="-?[A-Za-záéíóúÁÉÍÓÚ ]*(\.[0-9]+)?" id="NameAdmin">
+											<label class="mdl-textfield__label" for="NameAdmin">Nombre</label>
+											<span class="mdl-textfield__error">Invalid name</span>
+										</div>
+									</div>
+									<div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet">
+										<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+											<input class="mdl-textfield__input" type="text" pattern="-?[A-Za-záéíóúÁÉÍÓÚ ]*(\.[0-9]+)?" id="LastNameAdmin">
+											<label class="mdl-textfield__label" for="LastNameAdmin">Apellido</label>
+											<span class="mdl-textfield__error">Invalid last name</span>
+										</div>
+									</div>
+									<div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet">
+										<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+											<input class="mdl-textfield__input" type="tel" pattern="-?[0-9+()- ]*(\.[0-9]+)?" id="phoneAdmin">
+											<label class="mdl-textfield__label" for="phoneAdmin">Telefono</label>
+											<span class="mdl-textfield__error">Invalid phone number</span>
+										</div>
+									</div>
+									
+									<div class="mdl-cell mdl-cell--12-col">
+										<legend class="text-condensedLight"><i class="zmdi zmdi-border-color"></i> &nbsp; Datos de la cuenta</legend><br>
+									</div>
+									<div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet">
+										<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+											<input class="mdl-textfield__input" type="text" pattern="-?[A-Za-z0-9áéíóúÁÉÍÓÚ]*(\.[0-9]+)?" id="UserNameAdmin">
+											<label class="mdl-textfield__label" for="UserNameAdmin">Nombre de usuario</label>
+											<span class="mdl-textfield__error">Invalid user name</span>
+										</div>
+									</div>
+									<div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet">
+										<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+											<input class="mdl-textfield__input" type="password" id="passwordAdmin">
+											<label class="mdl-textfield__label" for="passwordAdmin">Password</label>
+											<span class="mdl-textfield__error">Invalid password</span>
+										</div>
+									</div>
+									<div class="mdl-cell mdl-cell--12-col">
+										<legend class="text-condensedLight"><i class="zmdi zmdi-border-color"></i> &nbsp; Seleccione un icono</legend><br>
+									</div>
+									<div class="mdl-cell mdl-cell--12-col mdl-cell--8-col-tablet">
+										<div class="mdl-grid">
+											<div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone">
+												<label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-1">
+													<input type="radio" id="option-1" class="mdl-radio__button" name="options" value="avatar-male.png">
+													<img src="assets/img/avatar-male.png" alt="avatar" style="height: 45px; width: 45px;" >
+													<span class="mdl-radio__label">Avatar 1</span>
+												</label>
+											</div>
+											<div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone">
+												<label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-2">
+													<input type="radio" id="option-2" class="mdl-radio__button" name="options" value="avatar-female.png">
+													<img src="assets/img/avatar-female.png" alt="avatar" style="height: 45px; width: 45px">
+													<span class="mdl-radio__label">Avatar 2</span>
+												</label>
+											</div>
+											<div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone">
+												<label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-3">
+													<input type="radio" id="option-3" class="mdl-radio__button" name="options" value="avatar-male2.png">
+													<img src="assets/img/avatar-male2.png" alt="avatar" style="height: 45px; width: 45px;">
+													<span class="mdl-radio__label">Avatar 3</span>
+												</label>
+											</div>
+											<div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone">
+												<label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-4">
+													<input type="radio" id="option-4" class="mdl-radio__button" name="options" value="avatar-female2.png">
+													<img src="assets/img/avatar-female2.png" alt="avatar" style="height: 45px; width:45px;">
+													<span class="mdl-radio__label">Avatar 4</span>
+												</label>
+											</div>
+										</div>
+									</div>
+								</div>
+								<p class="text-center">
+									<button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored bg-primary" id="btn-addAdmin">
+										<i class="zmdi zmdi-save"></i>
+									</button>
+									<div class="mdl-tooltip" for="btn-addAdmin">Guardar cambios</div>
+								</p>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+
+	</section>
+</body>
+</html>

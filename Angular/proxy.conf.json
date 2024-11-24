@@ -1,0 +1,8 @@
+{
+    "/api/*": {
+        "target": "http://localhost/FilApp/php",
+        "secure": false,
+        "changeOrigin": true,
+        "logLevel": "debug"
+    }
+}
