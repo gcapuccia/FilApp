@@ -72,9 +72,14 @@ $(document).ready(function(){
         });
 })(jQuery);
 
-function cambiarPag(nombrePag){
-	var pag = document.getElementById('paginas');
-	var iframeValue = document.getElementById('iframe');
+// function cambiarPag(nombrePag){
+// 	var pag = document.getElementById('paginas');
+// 	var iframeValue = document.getElementById('iframe');
 
-	pag.innerHTML= "<iframe id='iframe' src="+nombrePag+" width='100%' height='100%' frameborder='0'></iframe>"
+// 	pag.innerHTML= "<iframe id='iframe' src="+nombrePag+" width='100%' height='100%' frameborder='0'></iframe>"
+// }
+
+function cambiarPag(nombrePag) {
+    var iframe = document.getElementById('iframe');
+    iframe.src = nombrePag;
 }
