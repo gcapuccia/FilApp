@@ -1,9 +1,9 @@
 <?php
-require '../Conexiones/conn.php';
+require '../../Conexiones/conn.php';
 header("Content-Type: application/json");
 
 try {
-    $stmt = $conexion->query("SELECT * FROM resenas");
+    $stmt = $conexion->query("SELECT * FROM motivos");
     $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
     $response = [

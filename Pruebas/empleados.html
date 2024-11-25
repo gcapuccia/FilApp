@@ -56,7 +56,6 @@
 
 
     <h1>Lista de Empleados</h1>
-    <button id="loadData">Cargar Empleados</button>
     <table id="employeeTable">
         <thead>
             <tr>
@@ -72,6 +71,8 @@
             <!-- Los datos se cargarán aquí -->
         </tbody>
     </table>
+
+
 
 
 
@@ -95,7 +96,7 @@
 
             console.log('Datos enviados:', formData); // Mostrar los datos en la consola
 
-            fetch('http://localhost/FilApp/php/api/Empleados/Pempleados.php', {
+            fetch('https://gcapucci.urltemporal.com/FilApp/php/api/Empleados/Pempleados.php', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -113,21 +114,22 @@
 
 
         //CODIGO GET PARA MOSTRAR TABLA EMPLEADOS
-        document.getElementById('loadData').addEventListener('click', async function() {
-            const url = 'http://localhost/FilApp/php/api/Empleados/empleados.php'; // Cambia esto a la URL de tu API
+        //document.getElementById('loadData').addEventListener('click', async function() //
+        async function loadEmployees() {
+            const url = 'https://gcapucci.urltemporal.com/FilApp/php/api/Empleados/empleados.php'; // Cambia esto a la URL de tu API
 
             try {
                 const response = await fetch(url);
-                const data = await response.json();
+                const data2 = await response.json();
                 
-                console.log('Datos recibidos:', data); // Mostrar los datos en la consola
+                console.log('Datos recibidos:', data2); // Mostrar los datos en la consola
                 
                 const employeeTable = document.getElementById('employeeTable').getElementsByTagName('tbody')[0];
                 employeeTable.innerHTML = ''; // Limpiar la tabla antes de cargar nuevos datos
 
-                // Verificar que data es un array
-                if (Array.isArray(data.data)) {
-                    data.data.forEach(empleado => {
+                // Verificar que data2 es un array
+                if (Array.isArray(data2.data)) {
+                    data2.data2.forEach(empleado => {
                         const row = employeeTable.insertRow();
                         row.insertCell(0).textContent = empleado.id;
                         row.insertCell(1).textContent = empleado.Nombre;
@@ -135,6 +137,7 @@
                         row.insertCell(3).textContent = empleado.Mail;
                         row.insertCell(4).textContent = empleado.idCargo;
                         row.insertCell(5).textContent = empleado.idVendedor;
+                        row.insertCell(6).innerHTML = '<button><a href="https://gcapucci.urltemporal.com/FilApp/php/api/Empleados/empleados.php?id=' + empleado.id +'>Borrar</a></button>';
                     });
                 } else {
                     employeeTable.innerHTML = '<tr><td colspan="6">No se encontraron empleados</td></tr>';
@@ -144,15 +147,10 @@
                 console.error('Error:', error);
                 alert('Error al cargar los empleados');
             }
-        });
+        };
 
-
-        
-
-
-
-
-
+        // Cargar los empleados cuando la página se cargue 
+        document.addEventListener('DOMContentLoaded', loadEmployees);
     </script>
 </body>
 </html>

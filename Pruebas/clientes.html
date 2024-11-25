@@ -4,6 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulario de Prueba</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
 </head>
 <body>
     <h1>Formulario Clientes PRUEBA para API</h1>
@@ -23,6 +39,27 @@
 
         <button type="submit">Enviar</button>
     </form>
+
+
+    <h1>Lista de Clientes</h1>
+    <table id="ClientesTable">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Correo Electrónico</th>
+                <th>ingreso</th>
+                <th>finAtencion</th>
+                <th>usuario de Atencion</th>
+                <th>en Espera</th>
+                <th>Motivo</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Los datos se cargarán aquí -->
+        </tbody>
+    </table>
 
     <script>
         //CODIGO POST PARA CREAR UN CLIENTE NUEVO
@@ -58,7 +95,7 @@
 
 
         //CODIGO GET PARA MOSTRAR CLIENTES EN ESPERA
-        document.getElementById('loadData').addEventListener('click', async function() {
+        async function cargarClientes() {
             const url = 'http://localhost/FilApp/php/api/Clientes/clientes.php'; // Cambia esto a la URL de tu API
 
             try {
@@ -67,31 +104,36 @@
                 
                 console.log('Datos recibidos:', data); // Mostrar los datos en la consola
                 
-                const employeeTable = document.getElementById('employeeTable').getElementsByTagName('tbody')[0];
-                employeeTable.innerHTML = ''; // Limpiar la tabla antes de cargar nuevos datos
+                const ClientesTable = document.getElementById('ClientesTable').getElementsByTagName('tbody')[0];
+                ClientesTable.innerHTML = ''; // Limpiar la tabla antes de cargar nuevos datos
 
                 // Verificar que data es un array
                 if (Array.isArray(data.data)) {
-                    data.data.forEach(empleado => {
-                        const row = employeeTable.insertRow();
-                        row.insertCell(0).textContent = empleado.id;
-                        row.insertCell(1).textContent = empleado.Nombre;
-                        row.insertCell(2).textContent = empleado.Apellido;
-                        row.insertCell(3).textContent = empleado.Mail;
-                        row.insertCell(4).textContent = empleado.idCargo;
-                        row.insertCell(5).textContent = empleado.idVendedor;
+                    data.data.forEach(cliente => {
+                        const row = ClientesTable.insertRow();
+                        row.insertCell(0).textContent = cliente.id;
+                        row.insertCell(1).textContent = cliente.nombre;
+                        row.insertCell(2).textContent = cliente.apellido;
+                        row.insertCell(3).textContent = cliente.mail;
+                        row.insertCell(4).textContent = cliente.ingreso;
+                        row.insertCell(5).textContent = cliente.ingresoAtencion;
+                        row.insertCell(6).textContent = cliente.finAtencion;
+                        row.insertCell(7).textContent = cliente.usuarioDeAtencion;
+                        row.insertCell(8).textContent = cliente.enEspera;
+                        row.insertCell(9).textContent = cliente.motivo;
                     });
                 } else {
-                    employeeTable.innerHTML = '<tr><td colspan="6">No se encontraron empleados</td></tr>';
+                    ClientesTable.innerHTML = '<tr><td colspan="6">No se encontraron Clientes en espera</td></tr>';
                 }
 
             } catch (error) {
                 console.error('Error:', error);
-                alert('Error al cargar los empleados');
+                alert('Error al cargar los Clientes');
             }
-        });
+        };
 
-
+        // Cargar los cliente cuando la página se cargue 
+        document.addEventListener('DOMContentLoaded', cargarClientes);
 
     </script>
 </body>
