@@ -1,0 +1,4 @@
+[01-Dec-2024 23:17:56 UTC] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home8/gwpteilw/public_html/FilApp/Admin3/data/phpdatos.php:7
+Stack trace:
+#0 {main}
+  thrown in /home8/gwpteilw/public_html/FilApp/Admin3/data/phpdatos.php on line 7
