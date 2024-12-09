@@ -19,10 +19,7 @@ require_once '../php/Conexiones/conn.php';
  	</section>
 	*/
 
-	$sql = "SELECT count(enEspera) from clientes where enEspera < 2";
-	$respuesta = mysqli_query($link, $sql) or die(mysqli_error($link));
 	
-	$clientesAT = mysqli_fetch_array($respuesta);
 	
 	/*Cuento los clientes que ya esten atendidos y que el usuarioDeAtencion sea igual al usuario en sesion*/
 	$sql2 = "SELECT count(enEspera) from clientes where enEspera > 2 AND usuarioAtencion = '" . $_SESSION['user'] . "'";
