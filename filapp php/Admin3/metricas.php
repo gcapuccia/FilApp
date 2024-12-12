@@ -42,7 +42,42 @@ foreach ($motivos as $motivo) {
 ?>
 
 
-		<section class="full-width header-well">
+		
+
+		<!-- Aquí se generan los articles dinámicamente Muestro cantidad por motivo en cada tarjeta-->
+		<h3 class="text-center tittles">Clientes Atendidos Por Motivo</h3>
+		<section class="full-width text-center" style="padding: 10px 0; display: flex;">
+		<!-- <section class="full-width text-center" > -->
+			<div style="width: 30%; height: 30%; display: inline;">
+				<canvas id="Motivos" width="50%" height="50%"></canvas>
+			</div>
+		<!-- </section> -->
+		<section class="full-width text-center">
+		<?php while($fila = mysqli_fetch_array($resultado)){ ?>
+        <article class="full-width tile">
+            <div class="tile-text">
+                <span class="text-condensedLight">
+                    <?php echo $fila[1]; ?><br>
+                    <small> <?php echo $fila[0]; ?></small>
+                </span>
+            </div>
+            <i class="zmdi zmdi-account tile-icon"></i>
+        </article>
+    <?php } ?>
+		</section>
+		</section>
+
+		<!-- Coloco grafico de barras de motivos atendidos -->
+		 
+		<h3 class="text-center tittles">Clienes Atendidos Por Empleado </h3>
+		<section class="full-width text-center" style="padding: 10px 0; display: flex; align-items: center; justify-content: space-evenly;">		
+		<!-- Coloco grafico de torta -->
+		 		<!-- <section class="full-width header-well" >	 -->		
+				 <div style="width: 30%; height: 30%; display: inline;">
+				<canvas id="empleados" width="50%" height="50%"></canvas>
+			</div>
+		<!-- </section> -->
+		<section class="full-width text-center" style="padding: 10px 0;">
 		<article class="full-width tile">
 				<div class="tile-text">
 					<span class="text-condensedLight">
@@ -55,34 +90,8 @@ foreach ($motivos as $motivo) {
 
 		</section>
 
-		<!-- Aquí se generan los articles dinámicamente Muestro cantidad por motivo en cada tarjeta-->
-		<?php while($fila = mysqli_fetch_array($resultado)){ ?>
-        <article class="full-width tile">
-            <div class="tile-text">
-                <span class="text-condensedLight">
-                    <?php echo $fila[1]; ?><br>
-                    <small> <?php echo $fila[0]; ?></small>
-                </span>
-            </div>
-            <i class="zmdi zmdi-account tile-icon"></i>
-        </article>
-    <?php } ?>
-
-		<!-- Coloco grafico de barras de motivos atendidos -->
-		<section class="full-width header-well" >
-			<div style="width: 30%; height: 30%;">
-				<canvas id="Motivos" width="100px" height="100px"></canvas>
-			</div>
+		
 		</section>
-
-		<h3 class="text-center tittles">Clienes Por Empleado </h3>
-		<!-- Coloco grafico de torta -->
-		<section class="full-width header-well" >			
-			<div style="width: 30%; height: 30%;">
-				<canvas id="empleados" width="100px" height="100px"></canvas>
-			</div>
-		</section>
-		<section class="full-width text-center" style="padding: 40px 0;">
 
     
     
