@@ -8,7 +8,8 @@ if (isset($_GET['nocliente'])) {
     $nocliente = 'NO HAY CLIENTE EN ESPERA';
 }
 
-
+$sqldescanso = "UPDATE empleados SET enDescanso = 0 WHERE Usuario = '".$_SESSION['user']."'";
+$resultado = mysqli_query($link,$sqldescanso) or die(mysqli_error($link));
 
                             
 /* if (isset($_GET['fin'])) { */                                    
@@ -32,7 +33,7 @@ if (is_null( $fila['id'])) {
             <i class="zmdi zmdi-account tile-icon"></i>
         </article>
         <article class="full-width tile">
-            <a href="" class="tile-text">
+            <a href="descanso.php" class="tile-text">
                 <span class="text-condensedLight">
                     <br>
                     <small>Tomar descanso</small>
@@ -61,7 +62,7 @@ if (is_null( $fila['id'])) {
                                     INGRESO UN CLIENTE NUEVO
                                 </div>
                                 <div class="full-width panel-content">
-                                    <form>
+                                    
                                     
                                         <div class="mdl-grid">
                                             <div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet">
@@ -79,34 +80,51 @@ if (is_null( $fila['id'])) {
                                                     <span class="mdl-textfield__input" id="nombreCliente"><?php echo $fila['motivo']; ?></span>
                                                 </div>
                                             </div>
-												<div class="mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet">
+												<div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet">
                                                 <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                                                     <span class="mdl-textfield__input" id="nombreCliente"><?php echo $fila['mail']; ?></span>
                                                 </div>
                                             </div>
+                                            
+                                            
+                                             <div class="mdl-cell mdl-cell--12-col mdl-cell--8-col-tablet"> 
+
+                                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                                <form action="form/FinAtencion.php" method="GET">
+                                                    <input class="mdl-textfield__input" id="comentario" placeholder="Comentarios de la Atencion" name="Com" type="text" required>
+                                                    <input type="hidden" name="id" value="<?php echo $fila['id']; ?>">
+
+                                                </div>
+                                             </div> 
+                                            <article class="full-width tile">
+                                                <input type="submit" class="tile-text" value="Finalizar turno"> 
+                                                    <span class="text-condensedLight">
+                                                        <br>
+                                                        <small>Finalizar turno</small>
+                                                    </span>
+                                                <i class="zmdi zmdi-timer-off tile-icon"></i>
+                                            </input>
+                                            </article>
+                                            </form>
                                             </div>
-                                        
+                                            </div>
+                                            
+                                            
                                         </div>
-                                    </form>
+                                    
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
 				<section class="full-width text-center" style="padding: 10px 0;">
-					<article class="full-width tile">
-						<a href="form/FinAtencion.php?id=<?php echo $fila['id']; ?>" class="tile-text">
-							<span class="text-condensedLight">
-								<br>
-								<small>Finalizar turno</small>
-							</span>
-						</a>
-						<i class="zmdi zmdi-timer-off tile-icon"></i>
-					</article>
+					
+                    
 				</section>
+                
                 <?php 
                 } 
-              /*   } */
+              
                 
                 ?>
 		</section>

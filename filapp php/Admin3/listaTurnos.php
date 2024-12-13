@@ -26,7 +26,7 @@ require_once '../php/Conexiones/conn.php';
 								<th>Cliente</th>
                                 <th>Mail</th>
 								<th>Motivo</th>
-								<th>Marcar como prioridad</th>
+								<!-- <th>Marcar como prioridad</th> -->
 								<th>Opciones</th>
 							</tr>
 						</thead>
@@ -41,7 +41,7 @@ require_once '../php/Conexiones/conn.php';
 								<td><?php echo $fila['nombre'].' '.$fila['apellido'] ?></td>
                                 <td><?php echo $fila['mail'];?></td>
 								<td><?php echo $fila['motivo'];?></td>
-								<td><input type="checkbox"></td>
+								<!-- <td><input type="checkbox"></td> -->
 								<td><a class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect" href="form/eliminarCliente.php?id=<?php echo $fila['id']?>"><i class="zmdi zmdi-alert-octagon"></i></a>Eliminar</td>
 							</tr>
                             <?php
@@ -77,6 +77,7 @@ require_once '../php/Conexiones/conn.php';
                                 <th>Mail</th>
 								<th>Motivo</th>
 								<th>Usuario de Atencion</th>
+								<th>Comentario de la atencion</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -91,6 +92,7 @@ require_once '../php/Conexiones/conn.php';
                                 <td><?php echo $fila['mail'];?></td>
 								<td><?php echo $fila['motivo'];?></td>
 								<td><?php echo $fila['usuarioDeAtencion'];?></td>
+								<td><?php echo $fila['comentarios'];?></td>
 							</tr>
                             <?php
                             

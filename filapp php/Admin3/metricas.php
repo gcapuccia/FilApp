@@ -12,7 +12,7 @@ require_once '../php/Conexiones/conn.php';
 */
 
 
-$sqlmotivos = "SELECT motivo, count(*) as cuenta FROM clientes GROUP by motivo";
+$sqlmotivos = "SELECT motivo, count(*) as cuenta FROM clientes where enEspera = 3 GROUP by motivo";
 $resultado = mysqli_query($link, $sqlmotivos) or die(mysqli_error($link));
 
 $sql2 = "SELECT count(enEspera) from clientes where enEspera > 2";

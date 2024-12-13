@@ -151,6 +151,7 @@ if (isset($_GET['error'])) {
 								<th>id Vendedor</th>
 								<th>Usuario</th>
 								<th>Cargo</th>
+								<th>Login</th>
 								<th>Eliminar</th>
 							</tr>
 						</thead>
@@ -166,6 +167,14 @@ if (isset($_GET['error'])) {
 										}else{
 											$Cargo = 'Empleado';
 										}
+										
+										if($fila['UltimoLogin'] == 1){
+											$Login = '<button Style="background-color: greenyellow;">Logueado</button>';
+										}else{
+											$Login = '<button Style="background-color: red;">Desconectado</button>';
+										}
+
+
 								?>
 
 							<tr>
@@ -175,6 +184,7 @@ if (isset($_GET['error'])) {
 								<td><?php echo $fila['idVendedor'];?></td>
 								<td><?php echo $fila['Usuario'];?></td>
 								<td><?php echo $Cargo ?></td>
+								<td><?php echo $Login ?></td>
 								<td><a class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect" href="form/eliminarEmpleado.php?id=<?php echo $fila['id']?>"><i class="zmdi zmdi-alert-octagon"></i></a>Eliminar</td>
 							</tr>
 							<?php

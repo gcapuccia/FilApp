@@ -1,0 +1,5 @@
+[10-Dec-2024 23:45:25 UTC] PHP Warning:  require_once(Login/session_habilitada.php): failed to open stream: No such file or directory in /home8/gwpteilw/public_html/FilApp/Admin3/form/descanso.php on line 2
+[10-Dec-2024 23:45:25 UTC] PHP Fatal error:  require_once(): Failed opening required 'Login/session_habilitada.php' (include_path='.:/opt/cpanel/ea-php73/root/usr/share/pear') in /home8/gwpteilw/public_html/FilApp/Admin3/form/descanso.php on line 2
+[10-Dec-2024 23:46:00 UTC] PHP Warning:  include(footer.php): failed to open stream: No such file or directory in /home8/gwpteilw/public_html/FilApp/Admin3/form/descanso.php on line 60
+[10-Dec-2024 23:46:00 UTC] PHP Warning:  include(footer.php): failed to open stream: No such file or directory in /home8/gwpteilw/public_html/FilApp/Admin3/form/descanso.php on line 60
+[10-Dec-2024 23:46:00 UTC] PHP Warning:  include(): Failed opening 'footer.php' for inclusion (include_path='.:/opt/cpanel/ea-php73/root/usr/share/pear') in /home8/gwpteilw/public_html/FilApp/Admin3/form/descanso.php on line 60
