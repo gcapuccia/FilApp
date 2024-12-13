@@ -45,6 +45,10 @@ session_start();
 					$_SESSION['Cargo'] = $fila['idCargo'];
 					$_SESSION['foto'] = $fila['fotoPerfil'];
 					
+					$desconexion = "UPDATE empleados SET UltimoLogin = 1 WHERE Usuario = '".$fila['Usuario']."'";
+					mysqli_query($link,$desconexion) or die(mysqli_error($link));
+
+
 					if ($fila['idCargo'] == '1') {
 						echo "entro en id cargo";
 						header("Location: ../homeSup.php");

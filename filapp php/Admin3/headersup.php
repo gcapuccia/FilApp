@@ -26,7 +26,7 @@ if ($_SESSION['Cargo'] == 1) {
 	<script src="js/sweetalert2.min.js" ></script>
 	<script src="js/jquery.mCustomScrollbar.concat.min.js" ></script>
 	<script src="js/main.js" ></script>
-	<script src="js/chart.js"></script>
+	<!-- <script src="js/chart.js"></script> -->
 	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 </head>

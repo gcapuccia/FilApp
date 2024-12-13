@@ -18,6 +18,15 @@ $sqlTma = "SELECT SEC_TO_TIME(FLOOR(AVG(TIMESTAMPDIFF(SECOND, inicioAtencion, fi
 $respuestaTMA = mysqli_query($link, $sqlTma) or die(mysqli_error($link));
 $tma = mysqli_fetch_array($respuestaTMA);
 
+$sqlDes = "SELECT count(enDescanso) from empleados where enDescanso = 1";
+$respuestaDes = mysqli_query($link, $sqlDes) or die(mysqli_error($link));
+$descanso = mysqli_fetch_array($respuestaDes);
+
+$sqlLog = "SELECT count(UltimoLogin) from empleados where UltimoLogin = 1";
+$sqlLog = mysqli_query($link, $sqlLog) or die(mysqli_error($link));
+$Logeado = mysqli_fetch_array($sqlLog);
+
+
 
 ?>
 
@@ -45,13 +54,13 @@ $tma = mysqli_fetch_array($respuestaTMA);
 			<article class="full-width tile">
 				<div class="tile-text">
 					<span class="text-condensedLight">
-						<br>
-						<small>Metricas</small>
+					<small>Empleados en Logeado: </small><?php echo $Logeado[0]; ?><br>
+					<small>Empleados en Descanso: </small><?php echo $descanso[0]; ?><br>
 					</span>
 				</div>
-				<i class="zmdi zmdi-chart tile-icon"></i>
+				<i class="zmdi zmdi-coffee tile-icon"></i>
 			</article>
-			<article class="full-width tile">
+			<!-- <article class="full-width tile">
 				<div class="tile-text">
 					<span class="text-condensedLight">
 						9<br>
@@ -59,7 +68,7 @@ $tma = mysqli_fetch_array($respuestaTMA);
 					</span>
 				</div>
 				<i class="zmdi zmdi-file-text tile-icon"></i>
-			</article>
+			</article> -->
 			<article class="full-width tile">
 				<div class="tile-text">
 					<span class="text-condensedLight">

@@ -29,6 +29,16 @@ if ($_SESSION['Cargo'] == 2) {
 	<script src="js/main.js" ></script>
 	<script src="js/chart.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+	<style>
+	/* Cronometro!! */
+	.cronometro { 
+		font-size: 4em;
+		text-align: center; 
+		margin-top: 1%; 
+	} 
+	</style>
+
 </head>
 <body>
 	</section>
